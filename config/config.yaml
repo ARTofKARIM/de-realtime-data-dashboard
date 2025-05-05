@@ -1,0 +1,15 @@
+app:
+  title: "Real-Time Data Dashboard"
+  refresh_interval: 5
+  theme: "dark"
+data_sources:
+  - name: "sales"
+    type: "csv"
+    path: "data/sales.csv"
+  - name: "metrics"
+    type: "sqlite"
+    connection: "sqlite:///data/metrics.db"
+    query: "SELECT * FROM kpis"
+dashboard:
+  pages: ["Overview", "Sales Analytics", "Performance Metrics"]
+  default_page: "Overview"
